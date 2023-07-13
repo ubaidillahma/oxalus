@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Oxalus Signal is a cryptocurrency sharing platform that provides you with the best trading signals and strategies to help you trade better and make more profit."
+    />
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Oxalus Signal Cryptocurrency</title>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/64971a8194cf5d49dc5f9ef0/1h3n3v3eg";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
+  </head>
+  <body>
+    <noscript>oXALUS TRADER JS</noscript>
+    <div id="root"></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.paroller.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/odometer.min.js"></script>
+    <script src="js/viewport.jquery.js"></script>
+    <script src="js/izitoast.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      $(function () {
+        "use strict";
+
+        $(".balance").on("click", function (e) {
+          e.preventDefault();
+          const modal = $("#balance");
+          modal.find("input[name = payment]").val($(this).data("id"));
+          modal.modal("show");
+        });
+
+        $(".chooseBtn").on("click", function (e) {
+          e.preventDefault();
+          const modal = $("#confirmation");
+
+          modal.find("input[name=payment]").val($(this).data("id"));
+
+          modal.modal("show");
+        });
+      });
+    </script>
+    <script>
+      $(function () {
+        "use strict";
+
+        $(".decline-cookie__consent").on("click", function () {
+          $(".js-cookie-consent").remove();
+        });
+      });
+    </script>
+
+    <script>
+      $(function () {
+        "use strict";
+
+        $(document).on("submit", "#subscribe", function (e) {
+          e.preventDefault();
+          const email = $(".subscribe-email").val();
+          var url = "https://signalmax.springsoftit.com/subscribe";
+          $.ajax({
+            type: "POST",
+            url: url,
+            data: {
+              email: email,
+              _token: "9HYSzJRHgGXIxWvElYPsR46qmN19UlLiXfLy8Wi7",
+            },
+            success: (response) => {
+              $(".subscribe-email").val("");
+
+              if (response.success) {
+                iziToast.success({
+                  position: "topRight",
+                  message: "Successfully Subscribe",
+                });
+
+                return;
+              }
+
+              iziToast.error({
+                position: "topRight",
+                message: "",
+              });
+            },
+            error: () => {
+              iziToast.error({
+                position: "topRight",
+                message: "Email is Required",
+              });
+            },
+          });
+        });
+
+        var url = "https://signalmax.springsoftit.com/change-language";
+
+        $(".changeLang").on("change", function () {
+          if ($(this).val() == "") {
+            return false;
+          }
+          window.location.href = url + "?lang=" + $(this).val();
+        });
+      });
+    </script>
+
+    <script>
+      "use strict";
+    </script>
+  </body>
+</html>
